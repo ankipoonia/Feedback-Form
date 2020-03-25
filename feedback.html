@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Student Feedback Form</title>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+    <style>
+      html, body {
+      min-height: 100%;
+      }
+      body, div, form, input, p { 
+      padding: 0;
+      margin: 0;
+      outline: none;
+      font-family: Roboto, Arial, sans-serif;
+      font-size: 14px;
+      color: #666;
+      line-height: 22px;
+      }
+      h1 {
+      font-weight: 400;
+      }
+      h4 {
+      margin: 22px 0 4px;
+      color: #095484;
+      }
+      .testbox {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: inherit;
+      padding: 3px;
+      }
+      form {
+      width: 100%;
+      padding: 20px;
+      background: #fff;
+      box-shadow: 0 2px 5px #ccc; 
+      }
+      input {
+      width: calc(100% - 10px);
+      padding: 5px;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+      vertical-align: middle;
+      }
+      input:hover, textarea:hover {
+      outline: none;
+      border: 1px solid #095484;
+      }
+      .first-name {
+      margin-bottom: 22px;
+      }
+      span {
+      color: red;
+      }
+      th, td {
+      width: 21%;
+      padding: 15px 0;
+      border-bottom: 1px solid #ccc;
+      text-align: center;
+      vertical-align: unset;
+      line-height: 18px;
+      font-weight: 400;
+      word-break: break-all;
+      }
+      .first-col {
+      width: 16%;
+      text-align: left;
+      }
+      table {
+      width: 100%;
+      }
+      textarea {
+      width: calc(100% - 6px);
+      }
+      .btn-block {
+      margin-top: 20px;
+      text-align: center;
+      }
+      button {
+      width: 150px;
+      padding: 10px;
+      border: none;
+      -webkit-border-radius: 5px; 
+      -moz-border-radius: 5px; 
+      border-radius: 5px; 
+      background-color: #095484;
+      font-size: 16px;
+      color: #fff;
+      cursor: pointer;
+      }
+      button:hover {
+      background-color: #0666a3;
+      }
+      @media (min-width: 568px) {
+      th, td {
+      word-break: keep-all;
+      }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="testbox">
+      <form action="insert.php" method="POST">
+        <h1>Student Feedback Form</h1>
+        <h4>Academic Year<span>*</span></h4>
+        <input type="number" min="2016" max="2099" step="1" value="2016" name="academic_year" required/>
+        <h4>Semester<span>*</span></h4>
+        <input type="number" step="1" min="1" max="8" value="1" name="semester" required/>
+        <h4>Date of Feedback<span>*</span></h4>
+        <input type=date step="7" name="feedback_date" required/>
+        <h4>Branch<span>*</span></h4>
+        <input type="text" name="branch" required/>
+        <h4>Section<span>*</span></h4>
+        <input type="text" name="section" required/>
+        <h4>Subject<span>*</span></h4>
+        <input type="text" name="sub" required/>
+        <h4>Code<span>*</span></h4>
+        <input type="text" name="code" required/>
+        <h3>Has the Teacher covered entire syllabus as prescribed by University? </h5>
+        <div>
+          <input type="radio" name="answer" value="y"required> Yes<br>
+          <input type="radio" name="answer" value="n" required> No<br>
+        </div>
+        <h3>Effectiveness of Teacher in terms of:</h3>
+        <table>
+          <tr>
+            <th class="first-col"></th>
+            <th>5</th>
+            <th>4</th>
+            <th>3</th>
+            <th>2</th>
+            <th>1</th>
+          </tr>
+          <tr>
+            <td class="first-col">Technical content:</td>
+            <td><input type="radio" value="5" name="tech" required/></td>
+            <td><input type="radio" value="4" name="tech" required/></td>
+            <td><input type="radio" value="3" name="tech" required/></td>
+            <td><input type="radio" value="2" name="tech" required/></td>
+            <td><input type="radio" value="1" name="tech" required/></td>
+          </tr>
+          <tr>
+            <td class="first-col">Communication skills:</td>
+            <td><input type="radio" value="5" name="comm_skill" required/></td>
+            <td><input type="radio" value="4" name="comm_skill" required/></td>
+            <td><input type="radio" value="3" name="comm_skill" required/></td>
+            <td><input type="radio" value="2" name="comm_skill" required/></td>
+            <td><input type="radio" value="1" name="comm_skill" required/></td>
+          </tr>
+          <tr>
+            <td class="first-col">Availability beyond normal classes and co-operation to solve individual problems:</td>
+            <td><input type="radio" value="5" name="availablity" required/></td>
+            <td><input type="radio" value="4" name="availablity" required/></td>
+            <td><input type="radio" value="3" name="availablity" required/></td>
+            <td><input type="radio" value="2" name="availablity" required/></td>
+            <td><input type="radio" value="1" name="availablity" required/></td>
+          </tr>
+          <tr>
+            <td class="first-col">Pace on which contents were covered:</td>
+            <td><input type="radio" value="5" name="pace" required/></td>
+            <td><input type="radio" value="4" name="pace" required/></td>
+            <td><input type="radio" value="3" name="pace" required/></td>
+            <td><input type="radio" value="2" name="pace" required/></td>
+            <td><input type="radio" value="1" name="pace" required/></td>
+          </tr>
+          <tr>
+            <td class="first-col">Overall effectiveness:</td>
+            <td><input type="radio" value="5" name="effectiveness" required/></td>
+            <td><input type="radio" value="4" name="effectiveness" required/></td>
+            <td><input type="radio" value="3" name="effectiveness" required/></td>
+            <td><input type="radio" value="2" name="effectiveness" required/></td>
+            <td><input type="radio" value="1" name="effectiveness" required/></td>
+          </tr>
+        </table>
+        <h3>Rate the contents of the Syllabus:</h3>
+        <table>
+            <tr>
+              <th class="first-col"></th>
+              <th>5</th>
+              <th>4</th>
+              <th>3</th>
+              <th>2</th>
+              <th>1</th>
+            </tr>
+            <tr>
+              <td class="first-col"></td>
+              <td><input type="radio" value="5" name="technical_content" required/></td>
+              <td><input type="radio" value="4" name="technical_content" required/></td>
+              <td><input type="radio" value="3" name="technical_content" required/></td>
+              <td><input type="radio" value="2" name="technical_content" required/></td>
+              <td><input type="radio" value="1" name="technical_content" required/></td>
+            </tr>
+        </table>
+        <h3>Rate your lab experiments(if applicable):</h3>
+        <table>
+            <tr>
+              <th class="first-col"></th>
+              <th>5</th>
+              <th>4</th>
+              <th>3</th>
+              <th>2</th>
+              <th>1</th>
+            </tr>
+            <tr>
+              <td class="first-col"></td>
+              <td><input type="radio" value="5" name="lab_exp" required/></td>
+              <td><input type="radio" value="4" name="lab_exp" required/></td>
+              <td><input type="radio" value="3" name="lab_exp" required/></td>
+              <td><input type="radio" value="2" name="lab_exp" required/></td>
+              <td><input type="radio" value="1" name="lab_exp" required/></td>
+            </tr>
+        </table>
+        <h4>(Rating : 5-Excellent, 4-Very Good, 3- Good, 2- Average, 1- Below Average)</h4>
+        <h3>Additional Comments</h3>
+        <textarea rows="5" name="remarks"></textarea>
+        <small>* The information given via feedback form is anonymous and no one will catch you for your response.</small>
+        <div class="btn-block">
+          <button type="submit" value="Submit">Submit</button>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>
